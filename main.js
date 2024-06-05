@@ -1,28 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("background-video");
-    const slideshowContainer = document.getElementById("slideshow-container");
-    let slideIndex = 0;
+const roles = ["Mobile App Development,", "Website Development,", "Software Development,","Game Development,", "Blockchain Development."];
+let currentIndex = 0;
 
-    function showSlides() {
-        const slides = document.getElementsByClassName("slide");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000);
-    }
+const dynamicText = document.getElementById('dynamic-text');
 
-    video.addEventListener('ended', function() {
-        document.querySelector('.video-container').style.display = 'none';
-        slideshowContainer.style.display = 'block';
-        showSlides();
-    });
+function changeText() {
+    dynamicText.textContent = roles[currentIndex];
+    currentIndex = (currentIndex + 1) % roles.length;
+}
 
-    video.addEventListener('canplaythrough', function() {
-        video.loop = false;
-    });
-});
+setInterval(changeText, 2000);
+changeText();

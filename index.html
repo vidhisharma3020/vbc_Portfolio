@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo">VBC</a>
@@ -19,31 +23,84 @@
             <a href="#">Contact Us</a>
         </nav>
     </header>
-    <div class="video-container">
-        <video autoplay muted id="background-video">
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-        <section class="home">
+    <section>
+        <div class="video-container">
+            <video autoplay muted id="background-video">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
             <div class="home-content">
-                <h1>Building Tech Future with Innovation!</h1>
-                <p><br></p>
+                <h1>Building Tech Future <h1>
+                        <h1>With Innovation!</h1>
+                        <h3>And We provide <span id="dynamic-text"></span></h3>
             </div>
-        </section>
-    </div>
-    <div class="slideshow-container" id="slideshow-container">
-        <div class="slide fade">
-            <img src="image1.jpg" style="width:100%">
+            <a href="#" class="btn-box">Drop Your Queries</a>
         </div>
-        <div class="slide fade">
-            <img src="image2.jpg" style="width:100%">
+    </section>
+    <section class="about" id="about">
+        <div class="about-text1">
+            <h1>Top Mobile Application Development, Software Development & IT Consulting Company,
+                Building Smart Solutions For A Smarter World.</h1>
         </div>
-        <div class="slide fade">
-            <img src="image3.jpg" style="width:100%">
+        <div class="about-text2">
+            <h3>VBC Developers - where vision brings change</h3>
+            <p>
+                We are an innovative IT company specializing in custom software, web, and mobile app development. Our
+                services encompass cutting-edge cloud computing, seamless e-commerce solutions, expert IT consulting,
+                and advanced AI/ML services. We empower businesses with transformative technology solutions, driving
+                success and innovation in the digital era.
+            </p>
+            <a href="#" class="btn-box">About Us</a>
         </div>
-    </div>
-
+    </section>
+    <section class="hire-container">
+        <div class="hire-img">
+            <img src="woman1.jpeg">
+        </div>
+        <div class="hire-resources">
+            <div class="progress">
+                <div class="box">
+                    <i class='bx bx-briefcase-alt'></i>
+                    <h3>11+</h3>
+                    <span>Years of Experience</span>
+                </div>
+                <div class="box">
+                    <i class='bx bx-mobile'></i>
+                    <h3>4500+</h3>
+                    <span>Mobile Apps Developed</span>
+                </div>
+                <div class="box">
+                    <i class='bx bx-desktop'></i>
+                    <h3>2200+</h3>
+                    <span>Websites Developed</span>
+                </div>
+                <div class="box">
+                    <i class='bx bx-star'></i>
+                    <h3>4.9</h3>
+                    <span>Ratings on Clutch.co</span>
+                </div>
+                <div class="box">
+                    <i class='bx bxs-download'></i>
+                    <h3>110M</h3>
+                    <span>App Downloads</span>
+                </div>
+                <div class="box">
+                    <i class='bx bx-code'></i>
+                    <h3>1200+</h3>
+                    <span>Dedicated Developers</span>
+                </div>
+            </div>
+            <div class="hire-text">
+                <h6>Hire Now</h6>
+                <h3>Hire Dedicated Developers</h3>
+                <p>Hire our developers to design, develop, and deliver futuristic development solutions by leveraging
+                    the experience of a top development company.</p>
+                <a href="#" class="btn-box">Hire Developers</a>
+            </div>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
+
 </html>
