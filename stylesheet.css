@@ -175,7 +175,7 @@ header {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1.018);
     }
     100% {
         transform: scale(1);
@@ -237,9 +237,6 @@ header {
     gap: 1.5rem;
     margin:1rem 2rem 4rem 5rem;
 }
-.hire-resources{
-
-}
 .progress{
     margin: 3rem 1rem 1rem 0rem;
     padding: 1rem;
@@ -247,7 +244,6 @@ header {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap:0.1rem;
-    /* border: 2px solid #D3D3D3 ; */
     border-radius: 40px;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -401,17 +397,14 @@ header {
 .model-text h1{
     font-size: 2.7rem;
     opacity: 1;
-    animation: SideBounce 2s ease-in-out infinite;
+    animation: SideBounce 3s ease-in-out infinite;
 }
 @keyframes SideBounce {
     0%, 100% {
         transform: translateX(0);
     }
     50% {
-        transform: translateX(-50px);
-    }
-    100%{
-        transform: translateX(50px);
+        transform: translateX(-30px);
     }
 }
 .model-text p{
@@ -420,7 +413,7 @@ header {
     font-size: 1.1rem;
     line-height: 1.6;
     display: inline-block;
-    animation: pulse 1.5s ease-in-out infinite;
+    animation: SideBounce 3s ease-in-out infinite;
 }
 .model-container{
     margin: 1rem 2rem 2rem 2rem;
@@ -430,7 +423,7 @@ header {
     align-items: centre;
     gap: 1.5rem;
     opacity: 1;
-    animation: SideBounce 2s ease-in-out infinite;
+    animation: SideBounce 3s ease-in-out infinite;
 }
 .model-box{
     border: 2px solid #6878d6; 
@@ -444,10 +437,7 @@ header {
     animation: fadeInUp 1s ease-out;
 }
 .model-box:hover{
-    /* transform: translateY(-10px); */
-
     transform: translateY(-10px);
-    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
 }
 .model-box h1{
     font-size: 2.3rem;
@@ -476,7 +466,121 @@ header {
 .arrow-btn i{
     font-size: 30px;
 }
-
+.our-work{
+    margin: 4rem 2rem 2rem 3rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: centre;
+    gap: 1.5rem; 
+}
+.work-box h1{
+    margin: 0 1rem 0 0;
+    color:#87CEEB;
+    font-size: 3rem;
+    padding: 1rem;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.work-box p{
+    color: aliceblue;
+    font-size: 1.3rem;
+    line-height: 2;
+    margin-top: 1.5rem ;
+    margin-bottom: 2rem;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.work-box a{
+    position: relative;
+    top:0%;
+    left:0%;
+}
+.CUs{
+    margin:2rem 0;
+}
+.contactUs{
+    margin: 4rem 3rem 0rem 5rem;
+    padding: 2rem 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: centre;
+    gap: 1.5rem;
+}
+.Ctext1{
+    max-width:780px;
+    margin: 2rem 1rem 0rem 1rem; 
+    padding: 2.5rem 1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+.Ctext1 h1{
+    font-size: 2.5rem;
+    color:#09a4f2;
+}
+.Ctext1 p{
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 1.5rem ;
+    margin-bottom: 2rem;
+    display: inline-block;
+    color: #87CEEB;
+}
+.Ctext2{
+    margin: 0.5rem 1rem 0rem 1rem;
+    border: 2px solid #D3D3D3;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1c2a40, #233654);
+}
+.Ctext2:hover{
+    animation: pulse 0.8s ease-in-out infinite;
+}
+.Ctext2 h3{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 100;
+}
+.Ctext2 h1{
+    font-size: 1.8rem;
+}
+.Ctext2 p{
+    font-size: 1.1rem;
+    margin: 2rem 0 1rem 0;
+    line-height: 1.5;
+    color: #d3d3d3;
+}
+.Ctext2 a{
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    top:15%;
+    left: 0%;
+    background-color: #2980b9;
+    box-shadow: 0 0 5px #2980b9,
+        0 0 25px #2980b9;
+}
+.Ctext2 a:hover{
+    background-color: #ccc;
+    color:blue;
+}
+.data-box{
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr;
+    gap:1rem;
+    border: 1px groove black;
+    padding: 4rem;
+    margin:0rem;
+}
+.data-box h1{
+    font-size: 1.8rem;
+    color: rgb(229, 229, 117);
+    animation: SideBounce 3s ease-in-out infinite;
+}
+.data-box p{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #87CEEB;
+    animation: SideBounce 3s ease-in-out infinite;
+}
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -596,6 +700,9 @@ header {
         top:8%;
         left: 0;
     }
+    
+}
+@media (max-width:1023px){
     .model-text{
         margin: 2rem 0rem 2rem 0rem;
         padding: 0rem;
@@ -632,8 +739,73 @@ header {
     .arrow-btn i{
         font-size: 20px;
     }
-}
-@media (max-width:1023px){
+    .our-work{
+        margin:2rem 1rem 1rem 1rem;
+        padding: 0.1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .work-box h1{
+        font-size: 1.9rem;
+        margin: 0rem;
+        padding: 0rem;
+    }
+    .work-box p{
+        margin: 0.8rem 0 0 0;
+        padding: 0;
+        font-size: 1rem;
+    }
+    .work-box a {
+        margin: 0 0 1rem 0;
+        top:8%;
+        left: 0;
+    }
+    .contactUs{
+        margin:2rem 0rem;
+        padding: 0rem;
+        grid-template-columns: 1fr;
+    }
+    .Ctext1{
+        /* max-width:350px; */
+        margin: 1rem ; 
+        padding: 0rem;
+    }
+    .Ctext1 h1{
+        font-size: 2rem;
+    }
+    .Ctext1 p{
+        font-size: 1rem;
+    }
+    .Ctext2{
+        margin: 0.5rem;
+        padding: 1rem;
+        /* max-width: 340px; */
+    }
+    .Ctext2 h3{
+        font-size: 1.2rem;
+    }
+    .Ctext2 h1{
+        font-size: 1.5rem;
+    }
+    .Ctext2 p{
+        font-size: 1rem;
+        margin: 1rem 0 1rem 0;
+    }
+    .data-box{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:0.5rem;
+        border: 1px groove black;
+        padding: 1rem 2.5rem;
+        margin:0rem 1rem;
+    }
+    .data-box h1{
+        font-size: 1.3rem;
+    }
+    .data-box p{
+        font-size: 1rem;
+        line-height: 1.5;
+    }
     .navbar {
         display: none;
         flex-direction: column;
