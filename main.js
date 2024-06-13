@@ -11,6 +11,15 @@ function changeText() {
 setInterval(changeText, 2000);
 changeText();
 
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+});
 
 
 
