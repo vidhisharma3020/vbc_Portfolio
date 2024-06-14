@@ -1,7 +1,13 @@
-const roles = ["Mobile App Development,", "Website Development,", "Software Development,","Game Development,", "Blockchain Development."];
+const roles = [
+    "Mobile App Development,",
+    "Website Development,",
+    "Software Development,",
+    "Game Development,",
+    "Blockchain Development.",
+];
 let currentIndex = 0;
 
-const dynamicText = document.getElementById('dynamic-text');
+const dynamicText = document.getElementById("dynamic-text");
 
 function changeText() {
     dynamicText.textContent = roles[currentIndex];
@@ -11,23 +17,12 @@ function changeText() {
 setInterval(changeText, 2000);
 changeText();
 
-var swiper = new Swiper('.swiper-client-logos', {
-    slidesPerView: 4,
-    spaceBetween: 30,
+var swiper = new Swiper(".swiper-container", {
+    slidesPerView: 10,
+    spaceBetween: 40,
     loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
     },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
 });
-
-
-
