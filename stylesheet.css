@@ -834,6 +834,7 @@ header {
 .a-btn:hover::before {
     left: 100%;
 }
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
