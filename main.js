@@ -11,13 +11,21 @@ function changeText() {
 setInterval(changeText, 2000);
 changeText();
 
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 5,
+var swiper = new Swiper('.swiper-client-logos', {
+    slidesPerView: 4,
     spaceBetween: 30,
     loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
 });
 
