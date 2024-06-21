@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #081b29;
+}
+header {
+    position: static;
+    padding: 0.8rem;
+    background: #081b29;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    position: relative;
+    left: 5%;
+    font-size: 2.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    color: #87ceeb;
+}
+.main-container{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    background: linear-gradient(rgba(29, 26, 26, 0.5), rgba(15, 14, 14, 0.5)), url('i-bk.webp');
+    padding: 0 0 0 2rem;
+}
+.text-container{
+    color: white;
+    padding: 2rem 1rem 0.3rem 1rem;
+}
+.text-container .intro{
+    line-height: 0.8;
+}
+.text-container .intro h2{
+    font-size: 30px;
+}
+.text-container .intro p{
+    font-size: 20px;
+}
+.industries{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    border:2px solid wheat;
+    margin: 2.6rem 0 1.2rem 0;
+    padding: 1.5rem 2rem 0.3rem 2rem;
+    border-radius: 20px;
+    background-color: rgb(4, 19, 33);
+}
+.industries .industry{
+    padding: 1rem;
+}
+.industry a{
+    text-decoration: none;
+}
+.industry-image {
+    margin: 0;
+    background: linear-gradient(rgba(16, 13, 13, 0.5), rgba(30, 19, 19, 0.5)), url('woman2.jpeg');
+    background-size: cover;
+    color: white;
+}
+.i-text{
+    position: relative;
+    top:63%;
+    padding: 0 20px;
+}
+.i-text h1{
+    font-size:37px;
+    margin-bottom: 40px;
+}
+.i-btn{
+    color: white;
+    background: transparent;
+    border:2px solid whitesmoke;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+.i-btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.8s ease-in-out;
+}
+
+.i-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.i-btn:hover::before {
+    left: 100%;
+}
+.industry a{
+    color: wheat;
+}
+
+
