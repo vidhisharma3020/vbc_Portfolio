@@ -1,48 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #081b29;
+    background: white;
 }
 header {
+    width: 100%;
     position: static;
-    padding: 0.8rem;
-    background: #081b29;
+    padding: 0rem;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
+header a img{
+    height: 50px;
+}
 .logo {
+    margin: 0;
+    padding: 10px 0 5px 0;
     position: relative;
-    left: 5%;
-    font-size: 2.2rem;
+    left: 8%;
+    font-size: 2rem;
     color: white;
     text-decoration: none;
-    font-weight: 600;
     cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 .navbar a {
     display: inline-block;
     font-size: 18px;
-    color: white;
+    color: black;
     text-decoration: none;
     margin-left: 35px;
     transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
 }
 .navbar a:hover {
-    color: #87ceeb;
+    color: green;
 }
 .main-container{
     display:grid;
     grid-template-columns: 3fr 1fr;
-    background: linear-gradient(rgba(29, 26, 26, 0.5), rgba(15, 14, 14, 0.5)), url('i-bk.webp');
+    background: white;
     padding: 0 0 0 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .text-container{
-    color: white;
-    padding: 2rem 1rem 0.3rem 1rem;
+    margin-right: 2rem;
+    color: black;
+    padding: 2rem 1rem 0.1rem 1rem;
 }
 .text-container .intro{
     line-height: 0.8;
@@ -55,12 +67,13 @@ header {
 }
 .industries{
     display:grid;
+    background-color: #f9ffff;
     grid-template-columns: repeat(3,1fr);
-    border:2px solid wheat;
-    margin: 2.6rem 0 1.2rem 0;
+    border:2px solid #ebf8f8;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0 1.2rem 0;
     padding: 1.5rem 2rem 0.3rem 2rem;
     border-radius: 20px;
-    background-color: rgb(4, 19, 33);
 }
 .industries .industry{
     padding: 1rem;
@@ -103,7 +116,7 @@ header {
     height: 100%;
     top: 0;
     left: -100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(208, 245, 234, 0.2);
     transition: all 0.8s ease-in-out;
 }
 
@@ -116,7 +129,54 @@ header {
     left: 100%;
 }
 .industry a{
-    color: wheat;
+    color: black;
+    font-weight: 800;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
 

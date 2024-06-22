@@ -2,29 +2,33 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 body {
-    color: white;
-    background-color: #081b29;
+    color: black;
+    background-color: white;
 }
 header {
     position: static;
     width: 100%;
-    padding: 0.8rem;
-    /* background: #6878d6; */
+    padding: 0rem;
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
+header a img{
+    height: 50px;
+}
 .logo {
+    margin: 0;
+    padding: 10px 0 5px 0;
     position: relative;
-    left: 5%;
-    font-size: 2.2rem;
+    left: 8%;
+    font-size: 2rem;
     color: white;
     text-decoration: none;
-    font-weight: 600;
     cursor: default;
     opacity: 0;
     animation: slideRight 1s ease forwards;
@@ -43,7 +47,7 @@ header {
 .navbar a {
     display: inline-block;
     font-size: 18px;
-    color: white;
+    color: black;
     text-decoration: none;
     margin-left: 35px;
     transition: 0.3s;
@@ -63,12 +67,12 @@ header {
     }
 }
 .navbar a:hover {
-    color: #87ceeb;
+    color: green;
 }
 .video-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
     overflow: hidden;
     z-index: 1;
 }
@@ -100,6 +104,7 @@ header {
     position: relative;
     top: 28%;
     left: 10%;
+    color: white;
 }
 .home-content h3 {
     font-size: 2.5rem;
@@ -166,16 +171,18 @@ header {
     animation-delay: 1s;
 }
 .about {
-    margin: 4rem 2rem 2rem 5rem;
+    /* margin: 4rem 2rem 2rem 5rem; */
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: centre;
     gap: 1.5rem;
+    background: whitesmoke;
 }
 .about-text1 {
-    margin: 0 1rem 0 0;
-    color: #87ceeb;
+    margin: 2rem;
+    padding: 1rem;
+    color: black;
     font-size: 2rem;
     display: inline-block;
     /* animation: pulse 1.5s ease-in-out infinite; */
@@ -193,8 +200,8 @@ header {
 }
 .about-text2 {
     margin: 0 0 0 3rem;
-    color: #d3d3d3;
-    padding: 5rem 0.3rem 1rem 3rem;
+    color: black;
+    padding: 4rem 0.3rem 1rem 3rem;
     display: inline-block;
     /* animation: pulse 1.5s ease-in-out infinite; */
 }
@@ -205,7 +212,7 @@ header {
     animation-delay: 0.7s;
 }
 .about-text2 p {
-    color: aliceblue;
+    color: black;
     font-size: 1rem;
     line-height: 2;
     margin-top: 1.5rem;
@@ -231,7 +238,8 @@ header {
     }
 }
 .hire-img img {
-    margin: 1.5rem;
+    padding-left: 1rem;
+    margin: 3rem;
     height: 600px;
     max-width: 600px;
     height: auto;
@@ -240,11 +248,12 @@ header {
     animation: bounce 2.5s infinite;
 }
 .hire-container {
+    background-color: whitesmoke;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: centre;
     gap: 1.5rem;
-    margin: 1rem 2rem 4rem 5rem;
+    margin-bottom: 4rem;
 }
 .progress {
     margin: 3rem 1rem 1rem 0rem;
@@ -278,7 +287,7 @@ header {
     margin: 0.4rem;
     font-size: 2.1rem;
     /* color: #D3D3D3 ; */
-    color: #87ceeb;
+    color: black;
     animation: iconSwing 2s infinite;
     /* color:#FFD700; */
     /* color:#90EE90; */
@@ -297,30 +306,33 @@ header {
     margin-left: 0.5rem;
     font-weight: 900;
     animation: colorChange 3s infinite;
+    color: black;
 }
 @keyframes colorChange {
     0% {
-        color: #6ddf6d;
+        color: #3aea3a;
     }
     50% {
-        color: #6878d6;
+        color: #324de7;
     }
     100% {
-        color: #6ddf6d;
+        color: #0dba0d;
     }
 }
 .progress .box span {
     padding-top: rem;
-    color: #dee7eb;
+    color: black;
 }
 .hire-text {
+    background: white;
     margin: 4rem 2rem 1rem 0;
-    border: 2px solid #d3d3d3;
-    color: #87ceeb;
+    border: 2px solid white;
+    color: black;
     border-radius: 40px;
     padding: 4rem;
     line-height: 1.5;
     opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: bounce 2.4s ease-in-out infinite;
 }
 @keyframes bounce {
@@ -333,7 +345,9 @@ header {
     }
 }
 .hire-text h6 {
+    color: red;
     font-size: 1.3rem;
+    font-weight: 100;
 }
 .hire-text h3 {
     font-size: 2.2rem;
@@ -360,7 +374,7 @@ header {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
+    background-color: black;
     transition: all 0.3s ease;
 }
 .services {
@@ -373,14 +387,15 @@ header {
 }
 .service-box h1 {
     margin: 0 1rem 0 0;
-    color: #87ceeb;
+    color: black;
     font-size: 3rem;
     padding: 1rem;
     display: inline-block;
+    font-weight: 600;
     /* animation: pulse 1.5s ease-in-out infinite; */
 }
 .service-box p {
-    color: aliceblue;
+    color: black;
     font-size: 1.3rem;
     line-height: 2;
     margin-top: 1.5rem;
@@ -394,19 +409,25 @@ header {
     left: 0%;
 }
 .models {
-    margin: 4rem 2rem 1rem 3rem;
-    padding: 2rem;
+    background-color: rgb(213, 241, 232) ;
+    margin: 3rem 0rem 1rem 0rem;
+    padding: 1.5rem 2rem;
 }
 .model-text {
-    text-align: center;
     max-width: 700px;
-    margin: 6rem 4rem 2rem 20rem;
+    margin: 3rem 4rem 1rem 23rem;
     padding: 1.2rem;
 }
 .model-text h1 {
     font-size: 2.7rem;
     opacity: 1;
+    line-height: 1.1;
     /* animation: SideBounce 3s ease-in-out infinite; */
+}
+.model-text span{
+    margin:0;
+    font-weight: 600;
+    font-size: 18px;
 }
 @keyframes SideBounce {
     0%,
@@ -418,15 +439,15 @@ header {
     }
 }
 .model-text p {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem 0;
+    padding: 1rem 0;
     font-size: 1.1rem;
     line-height: 1.6;
     display: inline-block;
     /* animation: SideBounce 3s ease-in-out infinite; */
 }
 .model-container {
-    margin: 1rem 2rem 2rem 2rem;
+    margin: 2rem 2rem 2rem 2rem;
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -436,12 +457,12 @@ header {
     animation: SideBounce 3s ease-in-out infinite;
 }
 .model-box {
-    border: 2px solid #6878d6;
+    line-height: 1.3;
+    border: 2px solid white;
     padding: 4rem 2rem;
     border-radius: 40px;
-    background-color: transparent;
-    /* transition: background 0.5s, transform 0.5s;*/
-    box-shadow: 1px 1px 20px #01229ef7, 1px 1px 40px #0053b8f7;
+    background-color: whitesmoke ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     animation: fadeInUp 1s ease-out;
 }
@@ -454,9 +475,9 @@ header {
     animation: colorChange 3s infinite;
 }
 .model-box p {
-    margin: 2rem 0 2rem 0;
+    margin: 3rem 0 0rem 0;
     font-size: 1.2rem;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 .arrow-btn {
     margin: 1rem 1rem 2rem 0;
@@ -465,9 +486,9 @@ header {
     left: 80%;
     display: inline-block;
     padding: 12px;
-    background: #6878d6;
+    background: rgb(170, 241, 219) ;
     border-radius: 40px;
-    color: white;
+    color: rgb(30, 8, 8);
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
@@ -485,14 +506,14 @@ header {
 }
 .work-box h1 {
     margin: 0 1rem 0 0;
-    color: #87ceeb;
+    color: black;
     font-size: 3rem;
     padding: 1rem;
     display: inline-block;
     /* animation: pulse 1.5s ease-in-out infinite; */
 }
 .work-box p {
-    color: aliceblue;
+    color: black;
     font-size: 1.3rem;
     line-height: 2;
     margin-top: 1.5rem;
@@ -506,11 +527,20 @@ header {
     left: 0%;
 }
 .CUs {
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
+    background-color: whitesmoke;
+}
+.contactUs1 {
+    margin: 4rem 3rem 0rem 5rem;
+    padding: 2rem 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: centre;
+    gap: 1.5rem;
 }
 .contactUs {
     margin: 4rem 3rem 0rem 5rem;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 2rem 5rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: centre;
@@ -524,7 +554,7 @@ header {
 }
 .Ctext1 h1 {
     font-size: 2.5rem;
-    color: #09a4f2;
+    color: black;
 }
 .Ctext1 p {
     font-size: 1.2rem;
@@ -532,20 +562,22 @@ header {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     display: inline-block;
-    color: #87ceeb;
+    color:black;
 }
 .Ctext2 {
     margin: 0.5rem 1rem 0rem 1rem;
-    border: 2px solid #d3d3d3;
+    background: white;
+    border: 2px solid white;
     padding: 2rem;
-    background: linear-gradient(135deg, #1c2a40, #233654);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .Ctext2:hover {
     animation: pulse 0.8s ease-in-out infinite;
 }
 .Ctext2 h3 {
+    margin-top: 1rem;
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 100;
 }
 .Ctext2 h1 {
@@ -553,45 +585,45 @@ header {
 }
 .Ctext2 p {
     font-size: 1.1rem;
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
     line-height: 1.5;
-    color: #d3d3d3;
+    color: black;
 }
 .Ctext2 a {
     position: relative;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 5rem;
-    top: 15%;
+    top: 10%;
     left: 0%;
-    background-color: #2980b9;
-    box-shadow: 0 0 5px #2980b9, 0 0 25px #2980b9;
+    color: black
 }
 .Ctext2 a:hover {
-    background-color: #ccc;
-    color: blue;
+    background-color: #2cb0f2;
 }
 .data-box {
     display: grid;
-    grid-template-columns: 1fr 5fr 5fr;
+    grid-template-columns: 1fr 4fr 5fr;
     gap: 1rem;
-    border: 1px groove black;
+    border: 1px solid white;
     padding: 4rem;
     margin: 0rem;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .data-box h1 {
     font-size: 1.8rem;
-    color: rgb(229, 229, 117);
+    color: black;
     animation: SideBounce 3s ease-in-out infinite;
 }
 .data-box p {
     font-size: 1.1rem;
     line-height: 1.5;
-    color: #87ceeb;
+    color: black;
     animation: SideBounce 3s ease-in-out infinite;
 }
 .media {
     background: #ccc;
-    margin: 6rem 0;
+    margin: 0;
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -615,7 +647,6 @@ header {
     top: 25%;
     left: 0%;
     background-color: #17a2b8;
-    color: white;
 }
 .media-text a:hover {
     background-color: #117a8b;
@@ -633,6 +664,7 @@ header {
     margin: 0;
     padding: 4rem;
     text-align: center;
+    background-color: whitesmoke;
 }
 
 .global-text {
@@ -648,7 +680,7 @@ header {
 
 .global-text p {
     font-size: 1.2rem;
-    color: #ccc;
+    color: black;
     line-height: 1.5;
 }
 
