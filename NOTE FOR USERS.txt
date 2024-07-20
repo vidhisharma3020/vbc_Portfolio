@@ -1,0 +1,18 @@
+Dear User,
+In order to access this V.B.C Developers Portfolio -
+
+step 1-open vbc_Portfolio-main(1) folder
+
+step 2-open vbc_Portfolio-main   folder
+
+step 3-open Home page    folder
+
+step 4-open file index.html
+
+Note: 
+once you open this file "index.html" , all the links and pages are properly connected to it.
+
+
+                                       "Thanks for reading"
+              
+                                    "Hope you have a good day"
