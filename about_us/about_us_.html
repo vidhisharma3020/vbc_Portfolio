@@ -1,636 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - VBC Developers</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      nav {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-        display: flex;
-        justify-content: center;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - VBC Developers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: static;
+      width: 100%;
+      padding: 0rem;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    header a img {
+      height: 50px;
+    }
+
+    .logo {
+      margin: 0;
+      padding: 10px 0 5px 0;
+      position: relative;
+      left: 8%;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      cursor: default;
+      opacity: 0;
+      animation: slideRight 1s ease forwards;
+    }
+
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
       }
 
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
+      100% {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    .navbar {
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      display: inline-block;
+      font-size: 18px;
+      color: black;
+      text-decoration: none;
+      margin-left: 30px;
+      transition: 0.3s;
+      opacity: 0;
+      animation: slideTop 0.5s ease forwards;
+      animation-delay: calc(0.2s * var(--i));
+    }
+
+    @keyframes slideTop {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
       }
 
-      nav ul li {
-        margin: 0 20px;
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
       }
+    }
 
-      nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2em;
-      }
+    .navbar a:hover {
+      color: green;
+    }
 
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
+    .head {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #333;
+      color: #fff;
+      animation: fadeIn 2s;
+    }
 
-      header {
-        text-align: center;
-        padding: 50px 0;
-        background-color: #333;
-        color: #fff;
-        animation: fadeIn 2s;
-      }
+    .head h1 {
+      margin: 0;
+      font-size: 3em;
+    }
 
-      header h1 {
-        margin: 0;
-        font-size: 3em;
-      }
+    .head p {
+      margin: 5px 0;
+      font-size: 1.5em;
+    }
 
-      header p {
-        margin: 5px 0;
-        font-size: 1.5em;
-      }
+    .about-us,
+    .why-choose-us {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 0;
+      background-color: #fff;
+    }
 
-      .about-us,
-      .why-choose-us {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px 0;
-        background-color: #fff;
-      }
+    .about-section,
+    .why-section {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      width: 70%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #fff;
+      position: relative;
+      animation: slideIn 1s;
+    }
 
-      .about-section,
-      .why-section {
-        display: flex;
-        align-items: center;
-        margin: 20px 0;
-        width: 70%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-        overflow: hidden;
-        background-color: #fff;
-        position: relative;
-        animation: slideIn 1s;
-      }
+    .about-section:nth-child(even),
+    .why-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-      .about-section:nth-child(even),
-      .why-section:nth-child(even) {
-        flex-direction: row-reverse;
-      }
+    .about-section img,
+    .why-section img {
+      width: 45%;
+      height: auto;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-      .about-section img,
-      .why-section img {
-        width: 45%;
-        height: auto;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
+    .about-section:hover img,
+    .why-section:hover img {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
 
-      .about-section:hover img,
-      .why-section:hover img {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      }
+    .about-text,
+    .why-text {
+      padding: 20px;
+      width: 55%;
+      box-sizing: border-box;
+    }
 
-      .about-text,
-      .why-text {
-        padding: 20px;
-        width: 55%;
-        box-sizing: border-box;
-      }
+    .about-text h2,
+    .why-text h2 {
+      color: #333;
+      font-size: 2.2em;
+      margin-top: 0;
+      transition: color 0.3s;
+    }
 
-      .about-text h2,
-      .why-text h2 {
-        color: #333;
-        font-size: 2.2em;
-        margin-top: 0;
-        transition: color 0.3s;
-      }
+    .about-text p,
+    .why-text p,
+    .about-text ul,
+    .why-text ul {
+      color: #555;
+      font-size: 1.4em;
+      line-height: 1.7;
+      transition: color 0.3s;
+    }
 
-      .about-text p,
-      .why-text p,
-      .about-text ul,
-      .why-text ul {
-        color: #555;
-        font-size: 1.4em;
-        line-height: 1.7;
-        transition: color 0.3s;
-      }
+    .about-text ul,
+    .why-text ul {
+      padding-left: 20px;
+    }
 
-      .about-text ul,
-      .why-text ul {
-        padding-left: 20px;
-      }
+    .about-text li,
+    .why-text li {
+      margin-bottom: 10px;
+    }
 
-      .about-text li,
-      .why-text li {
-        margin-bottom: 10px;
-      }
+    .about-section:hover .about-text h2,
+    .about-section:hover .about-text p,
+    .about-section:hover .about-text ul,
+    .why-section:hover .why-text h2,
+    .why-section:hover .why-text p,
+    .why-section:hover .why-text ul {
+      color: #111;
+    }
 
-      .about-section:hover .about-text h2,
-      .about-section:hover .about-text p,
-      .about-section:hover .about-text ul,
-      .why-section:hover .why-text h2,
-      .why-section:hover .why-text p,
-      .why-section:hover .why-text ul {
-        color: #111;
-      }
-
-      .shine {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          to right,
+    .shine {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(to right,
           rgba(255, 255, 255, 0.2) 0%,
           rgba(255, 255, 255, 0.5) 50%,
-          rgba(255, 255, 255, 0.2) 100%
-        );
-        transform: rotate(30deg);
+          rgba(255, 255, 255, 0.2) 100%);
+      transform: rotate(30deg);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .about-section:hover .shine,
+    .about-section.shine-active .shine,
+    .why-section:hover .shine,
+    .why-section.shine-active .shine {
+      opacity: 1;
+      animation: shine 1s infinite 1s;
+    }
+
+    @keyframes shine {
+      0% {
+        top: -50%;
+        left: -50%;
+      }
+
+      100% {
+        top: 100%;
+        left: 100%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
         opacity: 0;
-        transition: opacity 0.3s;
       }
 
-      .about-section:hover .shine,
-      .about-section.shine-active .shine,
-      .why-section:hover .shine,
-      .why-section.shine-active .shine {
+      to {
         opacity: 1;
-        animation: shine 1s infinite 1s;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
       }
 
-      @keyframes shine {
-        0% {
-          top: -50%;
-          left: -50%;
-        }
-        100% {
-          top: 100%;
-          left: 100%;
-        }
+      to {
+        transform: translateY(0);
+        opacity: 1;
       }
+    }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+    /* Accordion styles */
+    .accordion {
+      width: 70%;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
 
-      @keyframes slideIn {
-        from {
-          transform: translateY(50px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
 
-      /* Accordion styles */
-      .accordion {
-        width: 70%;
-        margin: 50px auto;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
 
-      .accordion-item {
-        border-bottom: 1px solid #ddd;
-      }
+    .accordion-header {
+      background-color: #f7f7f7;
+      cursor: pointer;
+      padding: 15px;
+      font-size: 1.4em;
+      font-weight: bold;
+      position: relative;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-      .accordion-item:last-child {
-        border-bottom: none;
-      }
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background-color: #fff;
+      font-size: 1.2em;
+    }
 
-      .accordion-header {
-        background-color: #f7f7f7;
-        cursor: pointer;
-        padding: 15px;
-        font-size: 1.4em;
-        font-weight: bold;
-        position: relative;
-        transition: background-color 0.3s, color 0.3s;
-      }
+    .accordion-header::after {
+      content: "\002B";
+      font-size: 1.2em;
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s;
+    }
 
-      .accordion-content {
-        display: none;
-        padding: 15px;
-        background-color: #fff;
-        font-size: 1.2em;
-      }
+    .accordion-header.active::after {
+      transform: rotate(45deg);
+    }
 
-      .accordion-header::after {
-        content: "\002B";
-        font-size: 1.2em;
-        position: absolute;
-        right: 20px;
-        transition: transform 0.3s;
-      }
+    .accordion-header:hover {
+      background-color: #333;
+      color: #fff;
+    }
 
-      .accordion-header.active::after {
-        transform: rotate(45deg);
-      }
+    /* Smaller section for What We Do */
+    .about-section.small {
+      width: 50%;
+    }
 
-      .accordion-header:hover {
-        background-color: #333;
-        color: #fff;
-      }
+    .start-section {
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 50px 0;
+    }
 
-      /* Smaller section for What We Do */
-      .about-section.small {
-        width: 50%;
-      }
-      .start-section {
-        text-align: center;
-        background-color: #f4f4f4;
-        padding: 50px 0;
-      }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-      .form-container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
+    .form-container h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
-      .form-container h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-      }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-      .form-group {
-        margin-bottom: 20px;
-      }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-      .form-group label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-      .form-group input,
-      .form-group select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-size: 12px;
+      background-position: calc(100% - 10px) center;
+      background-repeat: no-repeat;
+      padding-right: 30px;
+    }
 
-      .form-group select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background-size: 12px;
-        background-position: calc(100% - 10px) center;
-        background-repeat: no-repeat;
-        padding-right: 30px;
-      }
+    .form-group textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-      .form-group textarea {
-        width: 100%;
-        min-height: 100px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
+    .form-group button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-      .form-group button {
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .vbc-developers {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 50px;
-      }
+    .vbc-developers {
+      background-color: black;
+      padding: 2rem 11rem 0rem 11rem;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      color: white;
+    }
 
-      .vbc-section {
-        width: 30%;
-      }
+    .vbc-section {
+      width: 30%;
+      padding: 1rem;
+    }
 
-      .vbc-section h2 {
-        margin-bottom: 10px;
-      }
+    .vbc-section h2 {
+      margin-bottom: 10px;
+    }
 
-      .vbc-section ul {
-        padding-left: 20px;
-      }
+    .vbc-section ul {
+      padding-left: 20px;
+    }
 
-      .vbc-section ul li {
-        margin-bottom: 5px;
-      }
+    .vbc-section ul li {
+      margin-bottom: 5px;
+    }
 
-      footer {
-        text-align: center;
-        margin-top: 50px;
-      }
+    footer {
+      text-align: center;
+      padding: 15px;
+    }
 
-      footer p {
-        margin: 5px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="../vbc_Portfolio-main (1)/vbc_Portfolio-main/Home page/"
-            >Home</a
-          >
-        </li>
-        <li><a href="../about_us/about_us_.html">About Us</a></li>
-        <li>
-          <a
-            href="../hire_resources/main_hire_page/hire_resources_main_page.html"
-            >Hire Resources</a
-          >
-        </li>
-        <li>
-          <a href="../services/main_services_page/services_main_page.html"
-            >Services</a
-          >
-        </li>
-        <li>
-          <a
-            href="../vbc_Portfolio-main (1)/vbc_Portfolio-main/Industries/industries.html"
-            >Industries</a
-          >
-        </li>
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
 
-        <li><a href="../contact_us/contact_button_page.html">Contact Us</a></li>
-      </ul>
+<body>
+  <header class="header">
+    <a href="#" class="logo"><img src="/vbc-logo.jpg"></a>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <nav class="navbar">
+      <a href="/Home page/index.html">Home</a>
+      <a href="/about_us/about_us_.html">About us</a>
+      <a href="/services/main_services_page/services_main_page.html">Services</a>
+      <a href="/hire_resources/main_hire_page/hire_resources_main_page.html">Hire Resources</a>
+      <a href="/Industries/industries.html" id="industry-btn">Industries</a>
+      <a href="/contact_us/contact_button_page.html">Contact Us</a>
     </nav>
-    <header>
-      <h1>About Us</h1>
-      <p>Welcome to VBC Developers</p>
-      <p>
-        An IT company specializing in custom software, web, and mobile app
-        development.
-      </p>
-    </header>
-
-    <section class="about-us">
-      <div class="about-section">
-        <img src="./6.jpg" alt="Who We Are" />
-        <div class="about-text">
-          <h2>Who Are We</h2>
-          <p>
-            VBC Developers is an IT company specializing in custom software,
-            web, and mobile app development. We offer cloud computing,
-            e-commerce solutions, IT consulting, and AI/ML services, empowering
-            businesses with innovative and transformative technology solutions.
-          </p>
-        </div>
+  </header>
+  <section class="head">
+    <h1>About Us</h1>
+    <p>Welcome to VBC Developers</p>
+    <p>
+      An IT company specializing in custom software, web, and mobile app
+      development.
+    </p>
+  </section>
+  <section class="about-us">
+    <div class="about-section">
+      <img src="./6.jpg" alt="Who We Are" />
+      <div class="about-text">
+        <h2>Who Are We</h2>
+        <p>
+          VBC Developers is an IT company specializing in custom software,
+          web, and mobile app development. We offer cloud computing,
+          e-commerce solutions, IT consulting, and AI/ML services, empowering
+          businesses with innovative and transformative technology solutions.
+        </p>
       </div>
-      <div class="about-section">
-        <img src="./11.jpg" alt="Our Mission" />
-        <div class="about-text">
-          <h2>Our Mission</h2>
-          <p>Crafting Spaces, Creating Legacies</p>
-          <p>VBC Developers – Where Vision Brings Change</p>
-        </div>
+    </div>
+    <div class="about-section">
+      <img src="./11.jpg" alt="Our Mission" />
+      <div class="about-text">
+        <h2>Our Mission</h2>
+        <p>Crafting Spaces, Creating Legacies</p>
+        <p>VBC Developers – Where Vision Brings Change</p>
       </div>
-      <div class="about-section small">
-        <img src="./10.jpg" alt="What We Do" />
-        <div class="about-text">
-          <h2>What We Do</h2>
-          <ul>
-            <li>Android Development</li>
-            <li>iOS Development</li>
-            <li>Web Development</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-      <div class="why-section">
-        <img src="./us.jpg" alt="Why Choose Us" />
-        <div class="why-text">
-          <h2>Why Choose Us</h2>
-          <p>
-            At VBC Developers, we prioritize innovation, quality, and customer
-            satisfaction. Our team of experts is dedicated to delivering
-            cutting-edge technology solutions tailored to meet the unique needs
-            of each client. We believe in fostering long-term partnerships,
-            ensuring that your business achieves sustainable growth and success
-            through our reliable and efficient services.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Accordion Section -->
-    <section class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          What services does VBC Developers offer?
-        </div>
-        <div class="accordion-content">
-          <p>We provide various services, including but not limited to:</p>
-          <ul>
-            <li>
-              Web Development: Building responsive and scalable websites using
-              the latest technologies.
-            </li>
-            <li>
-              Mobile App Development: Creating mobile applications for iOS and
-              Android platforms.
-            </li>
-            <li>
-              E-commerce Solutions: Developing online shopping platforms and
-              integrating payment gateways.
-            </li>
-            <li>
-              Quality Assurance and Testing: Ensuring the reliability and
-              performance of software products.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          What technologies does VBC Developers work with?
-        </div>
-        <div class="accordion-content">
-          <p>
-            We keep ourselves up-to-date with the latest technologies and
-            frameworks. Our expertise includes but is not limited to:
-          </p>
-          <ul>
-            <li>Front-end: HTML5, CSS3, JavaScript, React, Angular, Vue.js</li>
-            <li>Back-end: Node.js, Ruby on Rails, Django, Laravel</li>
-            <li>Mobile: Swift (iOS), Kotlin (Android), React Native</li>
-            <li>Databases: MySQL, PostgreSQL, MongoDB</li>
-            <li>Cloud Platforms: AWS, Google Cloud, Microsoft Azure</li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          How does VBC Developers ensure the security of its products?
-        </div>
-        <div class="accordion-content">
-          <p>
-            At VBC Developers, we take security seriously. We follow industry
-            best practices to safeguard our applications from potential threats.
-            This includes secure coding practices, regular security audits, and
-            vulnerability assessments to identify and address security
-            weaknesses.
-          </p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          What is the typical development process at VBC Developers?
-        </div>
-        <div class="accordion-content">
-          <p>Our development process involves several stages, including:</p>
-          <ul>
-            <li>
-              Requirement Analysis: Understanding the client’s needs and project
-              scope.
-            </li>
-            <li>
-              Design and Prototyping: Creating wireframes and interactive
-              prototypes.
-            </li>
-            <li>
-              Development: Building the application using appropriate
-              technologies.
-            </li>
-            <li>
-              Testing and Quality Assurance: Thoroughly testing the application
-              for bugs and issues.
-            </li>
-            <li>
-              Deployment: Launching the application on the desired platform.
-            </li>
-            <li>
-              Maintenance and Support: Providing ongoing support and updates.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          How can I get in touch with VBC Developers?
-        </div>
-        <div class="accordion-content">
-          <p>
-            You can reach out to us via our contact page or email us at
-            contact@vbcdevelopers.com. We are also available on various social
-            media platforms.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="start-section">
-      <h2>Want to Start with Us?</h2>
-      <p>
-        Start with us to gain access to a wide range of services and customized
-        solutions that can help drive your business toward success.
-      </p>
-      <p>Customer Satisfaction is our highest priority.</p>
-      <div class="form-container">
-        <form action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone No:</label>
-            <input type="text" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="service">Select Service:</label>
-            <select id="service" name="service" required>
-              <option value="">Choose Service</option>
-              <option value="android">Android Development</option>
-              <option value="ios">iOS Development</option>
-              <option value="web">Web Development</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Additional Content -->
-    <section class="vbc-developers">
-      <div class="vbc-section">
-        <h2>Services</h2>
+    </div>
+    <div class="about-section small">
+      <img src="./10.jpg" alt="What We Do" />
+      <div class="about-text">
+        <h2>What We Do</h2>
         <ul>
           <li>Android Development</li>
           <li>iOS Development</li>
           <li>Web Development</li>
         </ul>
       </div>
-      <div class="vbc-section">
-        <h2>Important Links</h2>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="why-section">
+      <img src="./us.jpg" alt="Why Choose Us" />
+      <div class="why-text">
+        <h2>Why Choose Us</h2>
+        <p>
+          At VBC Developers, we prioritize innovation, quality, and customer
+          satisfaction. Our team of experts is dedicated to delivering
+          cutting-edge technology solutions tailored to meet the unique needs
+          of each client. We believe in fostering long-term partnerships,
+          ensuring that your business achieves sustainable growth and success
+          through our reliable and efficient services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion Section -->
+  <section class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        What services does VBC Developers offer?
+      </div>
+      <div class="accordion-content">
+        <p>We provide various services, including but not limited to:</p>
         <ul>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms and Conditions</li>
+          <li>
+            Web Development: Building responsive and scalable websites using
+            the latest technologies.
+          </li>
+          <li>
+            Mobile App Development: Creating mobile applications for iOS and
+            Android platforms.
+          </li>
+          <li>
+            E-commerce Solutions: Developing online shopping platforms and
+            integrating payment gateways.
+          </li>
+          <li>
+            Quality Assurance and Testing: Ensuring the reliability and
+            performance of software products.
+          </li>
         </ul>
       </div>
-      <div class="vbc-section">
-        <h2>Get In Touch</h2>
-        <p>Chennai, Tamil Nadu India</p>
-        <p>info@vbcdevelopers.org</p>
-        <p>+91 9025156265</p>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        What technologies does VBC Developers work with?
       </div>
-    </section>
+      <div class="accordion-content">
+        <p>
+          We keep ourselves up-to-date with the latest technologies and
+          frameworks. Our expertise includes but is not limited to:
+        </p>
+        <ul>
+          <li>Front-end: HTML5, CSS3, JavaScript, React, Angular, Vue.js</li>
+          <li>Back-end: Node.js, Ruby on Rails, Django, Laravel</li>
+          <li>Mobile: Swift (iOS), Kotlin (Android), React Native</li>
+          <li>Databases: MySQL, PostgreSQL, MongoDB</li>
+          <li>Cloud Platforms: AWS, Google Cloud, Microsoft Azure</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        How does VBC Developers ensure the security of its products?
+      </div>
+      <div class="accordion-content">
+        <p>
+          At VBC Developers, we take security seriously. We follow industry
+          best practices to safeguard our applications from potential threats.
+          This includes secure coding practices, regular security audits, and
+          vulnerability assessments to identify and address security
+          weaknesses.
+        </p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        What is the typical development process at VBC Developers?
+      </div>
+      <div class="accordion-content">
+        <p>Our development process involves several stages, including:</p>
+        <ul>
+          <li>
+            Requirement Analysis: Understanding the client’s needs and project
+            scope.
+          </li>
+          <li>
+            Design and Prototyping: Creating wireframes and interactive
+            prototypes.
+          </li>
+          <li>
+            Development: Building the application using appropriate
+            technologies.
+          </li>
+          <li>
+            Testing and Quality Assurance: Thoroughly testing the application
+            for bugs and issues.
+          </li>
+          <li>
+            Deployment: Launching the application on the desired platform.
+          </li>
+          <li>
+            Maintenance and Support: Providing ongoing support and updates.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        How can I get in touch with VBC Developers?
+      </div>
+      <div class="accordion-content">
+        <p>
+          You can reach out to us via our contact page or email us at
+          contact@vbcdevelopers.com. We are also available on various social
+          media platforms.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="start-section">
+    <h2>Want to Start with Us?</h2>
+    <p>
+      Start with us to gain access to a wide range of services and customized
+      solutions that can help drive your business toward success.
+    </p>
+    <p>Customer Satisfaction is our highest priority.</p>
+    <div class="form-container">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone No:</label>
+          <input type="text" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="service">Select Service:</label>
+          <select id="service" name="service" required>
+            <option value="">Choose Service</option>
+            <option value="android">Android Development</option>
+            <option value="ios">iOS Development</option>
+            <option value="web">Web Development</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>
-        Copyright © 2024 VBC Developers: Best IT Company in India<br />
-        Built by SHAMIIT
-      </p>
-    </footer>
+  <!-- Additional Content -->
+  <section class="vbc-developers">
+    <div class="vbc-section">
+      <h2>Services</h2>
+      <ul>
+        <li>Android Development</li>
+        <li>iOS Development</li>
+        <li>Web Development</li>
+      </ul>
+    </div>
+    <div class="vbc-section">
+      <h2>Important Links</h2>
+      <ul>
+        <li>About Us</li>
+        <li>Contact</li>
+        <li>Privacy Policy</li>
+        <li>Terms and Conditions</li>
+      </ul>
+    </div>
+    <div class="vbc-section">
+      <h2>Get In Touch</h2>
+      <p>Chennai, Tamil Nadu India</p>
+      <p>info@vbcdevelopers.org</p>
+      <p>+91 9025156265</p>
+    </div>
+  </section>
 
-    <script>
-      function toggleAccordion(header) {
-        header.classList.toggle("active");
-        var content = header.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
+  <!-- Footer -->
+  <footer>
+    <p>
+      Copyright © 2024 VBC Developers: Best IT Company in India
+      Built by SHAMIIT
+    </p>
+  </footer>
+
+  <script>
+    function toggleAccordion(header) {
+      header.classList.toggle("active");
+      var content = header.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
