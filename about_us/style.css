@@ -1,0 +1,347 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #333;
+  color: #fff;
+  animation: fadeIn 2s;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+header p {
+  margin: 5px 0;
+  font-size: 1.5em;
+}
+
+.about-us,
+.why-choose-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.about-section,
+.why-section {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  width: 70%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  animation: slideIn 1s;
+}
+
+.about-section:nth-child(even),
+.why-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.about-section img,
+.why-section img {
+  width: 45%;
+  height: auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-section:hover img,
+.why-section:hover img {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about-text,
+.why-text {
+  padding: 20px;
+  width: 55%;
+  box-sizing: border-box;
+}
+
+.about-text h2,
+.why-text h2 {
+  color: #333;
+  font-size: 2.2em;
+  margin-top: 0;
+  transition: color 0.3s;
+}
+
+.about-text p,
+.why-text p,
+.about-text ul,
+.why-text ul {
+  color: #555;
+  font-size: 1.4em;
+  line-height: 1.7;
+  transition: color 0.3s;
+}
+
+.about-text ul,
+.why-text ul {
+  padding-left: 20px;
+}
+
+.about-text li,
+.why-text li {
+  margin-bottom: 10px;
+}
+
+.about-section:hover .about-text h2,
+.about-section:hover .about-text p,
+.about-section:hover .about-text ul,
+.why-section:hover .why-text h2,
+.why-section:hover .why-text p,
+.why-section:hover .why-text ul {
+  color: #111;
+}
+
+.shine {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.about-section:hover .shine,
+.about-section.shine-active .shine,
+.why-section:hover .shine,
+.why-section.shine-active .shine {
+  opacity: 1;
+  animation: shine 1s infinite 1s;
+}
+
+@keyframes shine {
+  0% {
+    top: -50%;
+    left: -50%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Accordion styles */
+.accordion {
+  width: 70%;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  background-color: #f7f7f7;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 1.4em;
+  font-weight: bold;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+  background-color: #fff;
+  font-size: 1.2em;
+}
+
+.accordion-header::after {
+  content: "\002B";
+  font-size: 1.2em;
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s;
+}
+
+.accordion-header.active::after {
+  transform: rotate(45deg);
+}
+
+.accordion-header:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Smaller section for What We Do */
+.about-section.small {
+  width: 50%;
+}
+.start-section {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-size: 12px;
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+.form-group textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.vbc-developers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.vbc-section {
+  width: 30%;
+}
+
+.vbc-section h2 {
+  margin-bottom: 10px;
+}
+
+.vbc-section ul {
+  padding-left: 20px;
+  background-color: #555;
+}
+
+.vbc-section ul li {
+  margin-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 5px 0;
+}

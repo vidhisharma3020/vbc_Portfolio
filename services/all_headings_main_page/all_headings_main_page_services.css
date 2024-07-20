@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6e6fa;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #e6e6fa;
+  color: black;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 40px; /* Adjust this value based on your logo image dimensions */
+  margin-right: 10px;
+  mix-blend-mode: multiply;
+}
+
+.navbar .logo span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+.header-title {
+  font-size: 4em;
+  color: black;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+  height: 500px;
+  width: 100%; /* Adjusted to 75% for more space for the image container */
+  margin-right: 20px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.card-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.card-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center; /* Center the text horizontally */
+}
+
+.card img {
+  width: cover;
+  height: 220px;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3,
+.card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.card:active {
+  transform: translateY(-5px);
+}
